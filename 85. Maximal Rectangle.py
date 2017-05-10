@@ -1,19 +1,16 @@
 class Solution(object):
     def maximalRectangle(self, matrix):
     	if len(matrix) > 0:
-    		ans = self.largestRectangleArea(matrix[0])
+    		ans = 0
     		print(ans)
-    		for i in range(1,len(matrix)):
+    		for i in range(0,len(matrix)):
     			for j in range(len(matrix[i])):
-    				if int(matrix[i][j]) != 0 :
+    				matrix[i][j] = int(matrix[i][j])
+    				if i != 0 and int(matrix[i][j]) != 0 :
     					matrix[i][j] = int(matrix[i-1][j]) + 1
-    				else:
-    					matrix[i][j] = 0
     				print matrix[i][j],	
     			temp = self.largestRectangleArea(matrix[i])	
-    			print("temp:" + temp)
     			ans = max(ans,self.largestRectangleArea(matrix[i]))
-    			print("nextans:" + ans)
     		return ans		
     	else:
     		return 0 

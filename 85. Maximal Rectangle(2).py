@@ -1,19 +1,13 @@
 class Solution(object):
     def maximalRectangle(self, matrix):
     	if len(matrix) > 0:
-    		n = len(matrix)
-    		m = len(matrix[0])
-    		left = []
-    		right = []
-    		heights = []
-    		maxs = 0
+    		n = len(matrix);m = len(matrix[0])
+    		left = [];right = [];heights = [];maxs = 0
     		for i in range(n):
     			for j in range(m):
     				matrix[i][j] = int(matrix[i][j])
     		for i in range(0,m):
-    			left.append(0)
-    			right.append(m-1)
-    			heights.append(0)
+    			left.append(0);right.append(m);heights.append(0)
     		for i in range(0,n):
     			cur_left = 0;cur_right = m
     			for j in range(m):
